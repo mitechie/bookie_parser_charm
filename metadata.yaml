@@ -1,0 +1,11 @@
+name: bookie-parser
+summary: Bookie Readable Parser
+maintainer: Rick Harding <rharding@mitechie.com>
+description: |
+  Run your own instance of the readability-like parser. Provides an api endpoint for apps and is used for parsing web content into the readable form for the Bookie bookmark application.
+provides:
+  website:
+    interface: http
+requires:
+  database:
+    interface: redis

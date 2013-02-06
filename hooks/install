@@ -1,0 +1,16 @@
+#!/bin/bash
+set -eux
+
+PROJ=/home/ubuntu/bookie_parser
+
+juju-log "Installing"
+sudo apt-get update
+juju-log "Installing packages"
+sudo apt-get install build-essential libxslt1-dev libxml2-dev python-dev git \
+     python-virtualenv libevent libevent-dev
+
+juju-log "Cloning repository"
+git clone git://github.com/mitechie/bookie_parser.git $PROJ
+cd $PROJ && make install
+
+chown -R ubuntu.ubuntu $PROJ

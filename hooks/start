@@ -1,0 +1,9 @@
+#!/bin/bash
+set -eux
+
+PROJ=/home/ubuntu/bookie_parser
+HOST=0.0.0.0
+PORT=80
+
+juju-log "Starting"
+cd $PROJ && gunicorn -D -p $PROJ/app.pid -k gevent --bind=$HOST:$PORT --workers=3 --max-requests=250 wsgi

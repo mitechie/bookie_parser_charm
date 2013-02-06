@@ -1,0 +1,6 @@
+#!/bin/bash
+set -eux
+
+PROJ=/home/ubuntu/bookie_parser
+juju-log "Stopping"
+cd $PROJ && kill -9 `app.pid`
